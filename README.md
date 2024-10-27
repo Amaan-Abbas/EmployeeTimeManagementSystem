@@ -90,4 +90,4 @@ This system provides a platform for accurate time tracking and effective managem
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/EmployeeTimeManagementSystem.git
+   git clone https://github.com/Amaan-Abbas/EmployeeTimeManagementSystem.git
