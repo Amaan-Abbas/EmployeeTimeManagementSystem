@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Time Management System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Employee Time Management System</h1>
+  </header>
+
+  <main>
+    <section class="dashboard">
+      <h2>Employee Dashboard</h2>
+      <div class="card">
+        <h3>Log Work Hours</h3>
+        <form id="logWorkForm">
+          <label for="startTime">Start Time:</label>
+          <input type="time" id="startTime" required>
+          <label for="endTime">End Time:</label>
+          <input type="time" id="endTime" required>
+          <button type="submit">Log Hours</button>
+        </form>
+        <p id="logWorkMessage"></p>
+      </div>
+
+      <div class="card">
+        <h3>Request Time Off</h3>
+        <form id="timeOffForm">
+          <label for="timeOffStart">Start Date:</label>
+          <input type="date" id="timeOffStart" required>
+          <label for="timeOffEnd">End Date:</label>
+          <input type="date" id="timeOffEnd" required>
+          <textarea id="reason" placeholder="Reason for time off..." required></textarea>
+          <button type="submit">Submit Request</button>
+        </form>
+        <p id="timeOffMessage"></p>
+      </div>
+
+      <div class="card">
+        <h3>View Schedule</h3>
+        <button id="viewScheduleBtn">View My Schedule</button>
+        <div id="scheduleDisplay"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Employee Time Management System</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
