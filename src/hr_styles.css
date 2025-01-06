@@ -1,0 +1,127 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+}
+
+header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.dashboard {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column; /* Ensure the cards stack vertically */
+  gap: 2rem;
+}
+
+.card {
+  background: white;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Ensure cards take full width */
+  box-sizing: border-box;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  overflow-x: auto; /* Allows horizontal scroll if content overflows */
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+form label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+form button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #45a049;
+}
+
+#scheduleMessage {
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+/* Prevent overflowing content */
+.card table {
+  table-layout: fixed; /* Fixes the table layout */
+  word-wrap: break-word; /* Prevents overflow for long text in cells */
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .dashboard {
+    padding: 1rem; /* Adjust padding on smaller screens */
+  }
+
+  .card {
+    width: 100%; /* Ensure cards take full width */
+  }
+
+  /* Handle long table content */
+  table {
+    font-size: 14px; /* Adjust font size for small screens */
+    overflow-x: auto; /* Allow horizontal scrolling */
+    display: block;
+  }
+
+  th, td {
+    word-wrap: break-word; /* Ensure table content wraps */
+    white-space: normal; /* Allow text to wrap in cells */
+  }
+
+  button {
+    margin-bottom: 10px; /* Add space between buttons in small screens */
+  }
+}

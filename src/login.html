@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Employee Time Management System</title>
+  <link rel="stylesheet" href="login_styles.css">
+</head>
+<body>
+  <header>
+    <h1>Login to Employee Time Management System</h1>
+  </header>
+
+  <main>
+    <section class="login-section">
+      <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Enter your username" required>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter your password" required>
+        
+        <label for="userType">Login As:</label>
+        <select id="userType" required>
+          <option value="employee">Employee</option>
+          <option value="hr">HR Manager</option>
+        </select>
+        
+        <button type="submit">Login</button>
+      </form>
+      <p id="loginMessage"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Employee Time Management System</p>
+  </footer>
+
+  <script src="login_scripts.js"></script>
+</body>
+</html>

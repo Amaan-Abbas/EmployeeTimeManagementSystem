@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HR Manager Dashboard</title>
+  <link rel="stylesheet" href="hr_styles.css">
+</head>
+<body>
+  <header>
+    <h1>HR Manager Dashboard</h1>
+  </header>
+
+  <main>
+    <section class="dashboard">
+      <div class="card">
+        <h2>Time Off Management</h2>
+        <table id="timeOffRequests">
+          <thead>
+            <tr>
+              <th>Employee Name</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Reason</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Time off requests will be dynamically populated -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h2>Schedule Management</h2>
+        <form id="updateScheduleForm">
+          <label for="employeeName">Employee Name:</label>
+          <input type="text" id="employeeName" required>
+          <label for="shiftTimes">Shift Times:</label>
+          <input type="text" id="shiftTimes" placeholder="e.g., 9:00 AM - 5:00 PM" required>
+          <button type="submit">Update Schedule</button>
+        </form>
+        <p id="scheduleMessage"></p>
+      </div>
+
+      <div class="card">
+        <h2>Time Tracking Review</h2>
+        <table id="timeTracking">
+          <thead>
+            <tr>
+              <th>Employee Name</th>
+              <th>Date</th>
+              <th>Work Hours</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Time tracking data will be dynamically populated -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h2>Generate Reports</h2>
+        <form id="generateReportForm">
+          <label for="reportEmployee">Employee Name:</label>
+          <input type="text" id="reportEmployee">
+          <label for="reportDateRange">Date Range:</label>
+          <input type="text" id="reportDateRange" placeholder="e.g., 01/01/2024 - 01/31/2024" required>
+          <button type="submit">Generate Report</button>
+        </form>
+        <div id="reportOutput"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Employee Time Management System</p>
+  </footer>
+
+  <script src="hr_scripts.js"></script>
+</body>
+</html>
