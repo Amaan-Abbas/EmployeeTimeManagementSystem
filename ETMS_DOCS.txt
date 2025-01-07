@@ -1,0 +1,278 @@
+Employee Time Management System Documentation
+
+Table of Contents
+
+Overview
+
+Features
+
+Technologies Used
+
+Project Structure
+
+Installation and Setup
+
+Database Design
+
+Modules
+
+User Management
+
+Employee Management
+
+Time Tracking
+
+Time Off Management
+
+HR Management
+
+API Endpoints
+
+JSP Integration
+
+Testing
+
+Security Considerations
+
+Future Enhancements
+
+Overview
+
+The Employee Time Management System is a web-based application designed to help organizations efficiently track employee work hours, manage time-off requests, and maintain schedules. It provides a user-friendly interface for employees, managers, and HR personnel to streamline time management operations.
+
+Features
+
+User Registration and Authentication: Secure user registration and login functionality.
+
+Employee Management: CRUD operations for employee details.
+
+Time Tracking: Log daily work hours and view time reports.
+
+Time Off Management: Request, approve, or reject time-off requests.
+
+HR Management: Manage schedules, view reports, and handle administrative tasks.
+
+Responsive Interface: JSP pages integrated with servlets for dynamic content rendering.
+
+Technologies Used
+
+Backend: Java Servlets
+
+Frontend: JSP (Java Server Pages), HTML, CSS
+
+Database: MySQL
+
+Build Tool: Maven
+
+Server: Apache Tomcat
+
+Testing: JUnit, Mockito
+
+Logging: SLF4J
+
+Project Structure
+
+EmployeeTimeManagementSystem/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   ├── org/
+│   │   │   │   ├── servlet/
+│   │   │   │   │   ├── LoginServlet.java
+│   │   │   │   │   ├── RegisterServlet.java
+│   │   │   │   │   ├── ProfileServlet.java
+│   │   │   │   │   ├── TimeOffApprovalServlet.java
+│   │   │   │   │   ├── UpdateEmployeeServlet.java
+│   │   │   │   ├── services/
+│   │   │   │   ├── DAO/
+│   │   │   │   ├── model/
+│   │   │   │   ├── resources/
+│   │   │   ├── webapp/
+│   │   │   │   ├── WEB-INF/
+│   │   │   │   │   ├── web.xml
+│   │   │   │   ├── jsp/
+│   │   │   │   │   ├── login.jsp
+│   │   │   │   │   ├── register.jsp
+│   │   │   │   │   ├── profile.jsp
+│   │   │   │   │   ├── time_off_request.jsp
+│   │   │   │   │   ├── error.jsp
+├── pom.xml
+├── target/
+├── logs/
+
+Installation and Setup
+
+Clone the Repository:
+
+git clone https://github.com/Amaan-Abbas/EmployeeTimeManagementSystem.git
+cd EmployeeTimeManagementSystem
+
+Set Up the Database:
+
+Import the schema.sql file into your MySQL database.
+
+Update database credentials in the resources/database.properties file.
+
+Build the Project:
+
+mvn clean install
+
+Deploy on Tomcat:
+
+Copy the generated WAR file from target/ to the webapps/ directory of your Tomcat server.
+
+Start the Tomcat server.
+
+Access the Application:
+Open your browser and navigate to http://localhost:8080/EmployeeTimeManagementSystem.
+
+Database Design
+
+Tables
+
+users:
+
+id (INT, PRIMARY KEY)
+
+username (VARCHAR)
+
+password (VARCHAR)
+
+role (VARCHAR)
+
+employees:
+
+id (INT, PRIMARY KEY)
+
+name (VARCHAR)
+
+position (VARCHAR)
+
+time_off_requests:
+
+id (INT, PRIMARY KEY)
+
+employee_id (INT, FOREIGN KEY)
+
+status (VARCHAR)
+
+work_hours:
+
+id (INT, PRIMARY KEY)
+
+employee_id (INT, FOREIGN KEY)
+
+hours_logged (INT)
+
+date (DATE)
+
+Modules
+
+User Management
+
+LoginServlet: Handles user authentication.
+
+RegisterServlet: Manages user registration.
+
+ProfileServlet: Displays and updates user profiles.
+
+Employee Management
+
+UpdateEmployeeServlet: Handles updates to employee details.
+
+ProfileServlet: Allows employees to view their profiles.
+
+Time Tracking
+
+WorkHoursServlet: Logs and displays work hours.
+
+Time Off Management
+
+TimeOffRequestServlet: Submits new time-off requests.
+
+TimeOffApprovalServlet: Approves or rejects time-off requests.
+
+HR Management
+
+ReportServlet: Generates reports for managers.
+
+API Endpoints
+
+Endpoint
+
+Method
+
+Description
+
+/login
+
+POST
+
+User login
+
+/register
+
+POST
+
+User registration
+
+/profile
+
+GET
+
+Fetch user profile
+
+/update-employee
+
+POST
+
+Update employee details
+
+/time-off-request
+
+POST
+
+Submit time-off request
+
+/time-off-approval
+
+POST
+
+Approve/reject time-off
+
+JSP Integration
+
+login.jsp: Login form.
+
+register.jsp: User registration form.
+
+profile.jsp: Displays user profile.
+
+time_off_request.jsp: Form for submitting time-off requests.
+
+error.jsp: Displays error messages.
+
+Testing
+
+Unit Tests: Test DAO and service methods using JUnit.
+
+Integration Tests: Test servlets with mock HTTP requests using Mockito.
+
+Security Considerations
+
+Hash passwords before storing them in the database.
+
+Sanitize user inputs to prevent SQL injection and XSS.
+
+Use HTTPS to secure communication.
+
+Future Enhancements
+
+Add email notifications for time-off approvals/rejections.
+
+Implement role-based access control.
+
+Add an analytics dashboard for HR managers.
+
+Author: Syed Amaan Abbas NaqviDate: January 2025
+
