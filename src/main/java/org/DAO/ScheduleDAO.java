@@ -1,5 +1,9 @@
+package org.DAO;
+
 import java.sql.SQLException;
 import java.util.List;
+
+import org.model.Schedule;
 
 public interface ScheduleDAO {
     void addSchedule(Schedule schedule) throws SQLException;

@@ -1,5 +1,9 @@
+package org.DAO;
+
 import java.sql.SQLException;
 import java.util.List;
+
+import org.model.WorkHours;
 
 public interface WorkHoursDAO {
     void logWorkHours(WorkHours workHours) throws SQLException;

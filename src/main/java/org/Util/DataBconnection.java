@@ -1,3 +1,5 @@
+package org.Util;
+
 import java.io.InputStream; //Import for accessing the input Stream for properties files.
 import java.sql.Connection; // Import for establishing connection with database.
 import java.sql.DriverManager; //Import for using DriverManager class.
